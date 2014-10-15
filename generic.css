@@ -1,0 +1,50 @@
+/* Basic tags */
+a img {
+	border: 0px;
+}
+
+pre {
+	overflow: auto;
+}
+
+/* Anchors */
+a {
+	color: #3465a4;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Basic classes */
+
+.none { /* to add paragraph spacing to various elements for ttys */
+	margin: 0px;
+	padding: 0px;
+}
+
+.invisible { /* stuff that should appear when this css isn't used */
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	height: 0px;
+	visibility: hidden;
+}
+
+.left {
+	margin: 10px;
+	padding: 0px;
+	float: left;
+}
+
+.right {
+	margin: 10px;
+	padding: 0px;
+	float: right;
+}
+
+.center {
+	text-align: center;
+}

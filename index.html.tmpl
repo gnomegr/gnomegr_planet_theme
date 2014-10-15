@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title><TMPL_VAR name></title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" type="image/png" href="images/gnome-16.png">
+	<link rel="alternate" type="application/atom+xml" title="<TMPL_VAR title ESCAPE="HTML"> Atom 1.0" href="<TMPL_VAR link ESCAPE="HTML">atom.xml">
+	<link rel="alternate" type="application/rss+xml" title="<TMPL_VAR title ESCAPE="HTML"> RSS 2.0" href="<TMPL_VAR link ESCAPE="HTML">rss20.xml">
+	<link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cantarell:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./nlayout.css" type="text/css">
+	<link rel="stylesheet" href="./planet.css" type="text/css">
+	<link rel="stylesheet" href="./generic.css" type="text/css">
+	<link rel="stylesheet" href="http://blogs.gnome.org/wp-content/mu-plugins/bug-links/bug-links.css" type="text/css">
+
+	<style rel="stylesheet" type="text/css">
+	#global_domain_bar
+	{
+                background: none repeat scroll 0 0 #FFFFFF;
+                height: 10px;
+                border: 0 none;
+                font-size: 100%;
+                margin: 0;
+                padding: 0;
+                vertical-align: baseline;
+                color: #2E3436;
+                font-family: Cantarell,'Droid Sans',Ubuntu,'DejaVu Sans',Arial,sans-serif;
+                font-size: 14px;
+                line-height: 1.7em;
+    		-moz-border-radius: 5px #8fb3d9;
+    		-webkit-border-radius: 5px #8fb3d9;
+		box-shadow: 0 4px 2px -2px #8fb3d9;
+	}
+
+	#global_domain_bar a
+	{
+		-moz-border-radius: 5px 5px 5px 5px;
+		-webkit-border-radius: 5px;
+		box-shadow: 0 4px 2px -2px #8fb3d9;
+		border-radius: 5px 5px 5px 5px;
+		background: url("images/30/favicon.png") no-repeat scroll 8px 7px #FFFFFF;
+		color: #555753;
+		float: right;
+		font-size: 12px;
+		margin-right: 30px;
+		padding: 4px 12px 2px 26px;
+		text-decoration: none;
+		line-height: 1.7em;
+	}
+	
+	#page
+	{
+		background: url("images/30/html-bg.png") repeat-x scroll center top #FFFFFF;
+		font-family: Cantarell,'Droid Sans',Ubuntu,'DejaVu Sans',Arial,sans-serif;
+	}
+	
+		
+	a
+	{ 
+		color: #0489B7;
+	}
+	
+	#global_domain_bar div {
+		max-width: 940px;
+		margin: 0 auto;
+	}
+	
+	div.post-contents
+	{
+		background: white;
+	}
+	
+	.post-title a
+	{
+		color: #0489B7;
+		font-weight: bold;
+	}
+	
+	#footer, #feeds
+	{
+                background: none repeat scroll 0 0 #D3D7CF;
+                color: #555753;
+	}
+	
+	#footer a
+	{
+                color: inherit;
+	}
+	
+	#footer-grass
+	{
+                  background: url("images/30/grass.png") repeat-x scroll center top transparent;
+                  height: 39px;
+                  margin-top: -33px;
+	}
+	
+	#footer-art
+	{
+		margin-left: auto;
+		margin-right: auto;
+		clear: left;
+		height: 180px;
+		margin-top: 0;
+		width: 940px;
+		background-image: url("images/30/default.png");
+	}
+	
+	#planet-banner
+	{
+                  margin-left: auto;
+                  margin-right: auto;
+                  clear: left;
+                  margin-top: 0;
+                  width: 65em;
+                  padding: 0 1em;
+	}
+	
+	
+	#planet-subtitle
+	{
+		color: #555753;
+		font-size: 100%;
+		font-weight: bold;
+		margint: 0;
+		padding 0;
+		padding-top: 25px;
+	}
+	
+	#planet-logo
+	{
+		vertical-align: middle;
+		padding-bottom: 25px;
+		margin-left:    26px;
+		padding-right:  50px;
+	}
+	
+	.post
+	{
+		color: #555753;
+		line-height: 1.6;
+	}
+	</style>
+
+
+<script type="text/javascript">
+/***********************************************
+* Dynamic Ajax Content- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var bustcachevar=1 //bust potential caching of external pages after initial request? (1=yes, 0=no)
+var loadedobjects=""
+var rootdomain="http://"+window.location.hostname
+var bustcacheparameter=""
+
+function ajaxpage(url, containerid){
+var page_request = false
+if (window.XMLHttpRequest) // if Mozilla, Safari etc
+page_request = new XMLHttpRequest()
+else if (window.ActiveXObject){ // if IE
+try {
+page_request = new ActiveXObject("Msxml2.XMLHTTP")
+} 
+catch (e){
+try{
+page_request = new ActiveXObject("Microsoft.XMLHTTP")
+}
+catch (e){}
+}
+}
+else
+return false
+page_request.onreadystatechange=function(){
+loadpage(page_request, containerid)
+}
+if (bustcachevar) //if bust caching of external page
+bustcacheparameter=(url.indexOf("?")!=-1)? "&"+new Date().getTime() : "?"+new Date().getTime()
+page_request.open('GET', url+bustcacheparameter, true)
+page_request.send(null)
+}
+
+function loadpage(page_request, containerid){
+if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
+document.getElementById(containerid).innerHTML=page_request.responseText
+}
+
+function loadobjs(){
+if (!document.getElementById)
+return
+for (i=0; i<arguments.length; i++){
+var file=arguments[i]
+var fileref=""
+if (loadedobjects.indexOf(file)==-1){ //Check to see if this object has not already been added to page before proceeding
+if (file.indexOf(".js")!=-1){ //If object is a js file
+fileref=document.createElement('script')
+fileref.setAttribute("type","text/javascript");
+fileref.setAttribute("src", file);
+}
+else if (file.indexOf(".css")!=-1){ //If object is a css file
+fileref=document.createElement("link")
+fileref.setAttribute("rel", "stylesheet");
+fileref.setAttribute("type", "text/css");
+fileref.setAttribute("href", file);
+}
+}
+if (fileref!=""){
+document.getElementsByTagName("head").item(0).appendChild(fileref)
+loadedobjects+=file+" " //Remember this object as being already added to page
+}
+}
+}
+
+</script>
+
+
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.lazyload.min.js"></script>
+	<script type="text/javascript"><!-- $(function(){ $('.post img').lazyload(); }); --></script>
+</head>
+
+<body>
+
+<div id="page">
+
+
+	<div id="global_domain_bar">
+		<div>
+			<a href="http://www.gnome.org" target="_blank"><strong>GNOME</strong>.ORG</a>
+			<a href="http://www.gnome.gr" target="_blank"><strong>GNOME</strong>.GR</a>
+			<a href="http://wiki.gnome.gr" target="_blank"><strong>WIKI</strong></a>
+		</div>
+  </div>
+
+	<div id="planet-banner">
+		<p id="planet-subtitle">
+			<img id="planet-logo" src="./images/30/planet-logo.png"  alt="Πλανήτης GNOME Ελλάδα/Κύπρος" title="Πλανήτης GNOME Ελλάδα/Κύπρος"/>
+			24 ώρες την ημέρα, 7 ημέρες την εβδομάδα, 365 ημέρες το χρόνο...
+		</p>
+        </div>
+
+
+  <div class="page_title">
+        <ul class="subpages_list">
+                <li ><span style="font-size: 18px; font-weight: bold; "><TMPL_VAR name></span></li>
+        </ul>
+</div>   
+
+
+	<div id="content">
+	<TMPL_IF banner_message>
+	<div class="banner"><TMPL_VAR banner_message></div>
+	</TMPL_IF>
+
+
+	<TMPL_LOOP Items>
+		<TMPL_IF new_date>
+			<h2 class="date"><TMPL_VAR new_date></h2>
+		</TMPL_IF>
+
+		<div class="entry<TMPL_IF channel_nick> <TMPL_VAR channel_nick></TMPL_IF>">
+			<div class="person-info">
+				<a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title ESCAPE="HTML">"><TMPL_IF channel_face><img class="face" src="heads/<TMPL_VAR channel_face ESCAPE="HTML">" alt=""><br><TMPL_ELSE><img class="face" src="./images/nobody.png" alt=""><br></TMPL_IF><TMPL_VAR channel_name><TMPL_IF channel_real><br><TMPL_VAR channel_real></TMPL_IF><TMPL_IF channel_nick><br>(<TMPL_VAR channel_nick>)</TMPL_IF></a>
+			</div>
+
+			<div class="post">
+				<div class="post-header">
+					<TMPL_IF title><h3 class="post-title"><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h3></TMPL_IF>
+				</div> <!-- /post-header -->
+
+				<div class="post-contents <TMPL_IF channel_fixedwidth>post-fixedwidth</TMPL_IF>">
+					<TMPL_VAR content>
+				</div> <!-- /post-contents -->
+
+				<div class="post-footer">
+					<p><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR date></a></p>
+				</div> <!-- /post-footer -->
+
+				<b class="vt lt"></b><b class="vt rt"></b><b class="hz to"></b><b class="hz bo"></b>
+				<b class="cr tl"></b><b class="cr tr"></b><b class="cr bl"></b><b class="cr br"></b>
+			</div> <!-- /post -->
+	</div> <!-- /entry -->
+	</TMPL_LOOP>
+
+</div> <!-- /content -->
+
+<div id="footer-art"> &nbsp; </div>
+<div id="footer-grass"> &nbsp; </div>
+
+<div id="feeds">
+	<h3><a href="feeds.html">Ροές</a></h3>
+	<div id="feedlist"></div>
+</div>
+
+
+<div id="feeds">
+        <h3><a class="close" href="javascript:ajaxpage('./images/banners/banners.php?page=2', 'banners');">Κοινότητες</a></h3>
+        <div id="banners">
+        </div>
+</div>
+
+<div id="feeds">
+	<h3><a class="to" href="javascript:ajaxpage('./heads/heads.php?page=2', 'head');">Τα κεφάλια των συντελεστών</a></h3>
+	<div id="head">
+	</div>
+</div>
+
+<div id="footer">
+
+<div class="column">
+<div class="section">
+<h3>Πλανήτης GNOME.gr</h3>
+<p><b>Ο <TMPL_VAR title ESCAPE="HTML"> είναι ένα παράθυρο στον κόσμο, τη δουλειά και ζωή των ανθρώπων που στηρίζουν το  <a href="http://www.gnome.gr/" target="_blank">ελεύθερο λογισμικό GNOME</a> στην Ελλάδα και Κύπρο.Δείτε τους <a href="http://planet.gnome.gr/heads/heads.php?page=1" target="_blank">προγραμματιστές και άλλους συντελεστές</a>.</b></p>
+
+<p>Βασίζεται στο λογισμικό συνάθροισης ιστολογίων <a href="http://www.planetplanet.org/">Planet</a>,το cron,τη γλώσσα <a href="http://www.python.org/">Python</a> και στο <a href="http://www.gnome.gr/" target="_blank">gnome.gr</a>.Η όμορφη σχεδίαση του προτύπου από τους <a href="http://vinicius.depizzol.com.br/blog/" target="_blank">Vinicius Depizzol</a> και <a href="http://aruiz.typepad.com" target="_blank">Alberto Ruiz</a>,εμπνευσμένο από τη προηγούμενη δουλειά των <a href="http://bethesignal.org/" target="_blank">Jeff Waugh</a>, <a href="http://www.actsofvolition.com/" target="_blank">Steven Garrity</a>, <a href="http://www.gnome.org/~seth/">Seth Nickell</a> and <a href="http://www.isity.net/">Diana Fong</a>.</p>
+
+<p>Ενημερώθηκε <TMPL_VAR date> Οι καταχωρήσεις έχουν κανονικοποιηθεί ως προς ώρα UTC.</p>
+</div>
+</div>
+
+<div class="column">
+<div class="section">
+<h3>GNOME World Wide</h3>
+<p><a href="http://live.gnome.org/GnomeWorldWide" target="_blank"><img src="http://people.gnome.org/~jdub/random/GnomeWorldWideSmall.jpg" alt=""></a></p>
+<p>Οι κοινότητες του GNOME ανά το κόσμο:</p>
+<ul>
+  <li><a href="http://planet.gnome.org/" target="_blank">Πλανήτης GNOME.org</a></li>
+  <li><a href="http://planeta.br.gnome.org/" target="_blank">Βραζιλία</a></li>
+  <li><a href="http://planeta.gnome.cl/" target="_blank">Χιλή</a></li>
+  <li><a href="http://planet.gnomefr.org/" target="_blank">Γαλλία</a></li>
+  <li><a href="http://planeta.es.gnome.org/" target="_blank">Ισπανία</a></li>
+  <li><a href="http://planet.nl.gnome.org/" target="_blank">Ολλανδία</a></li>
+  <li><a href="http://www.gnome.org.tr/" target="_blank">Τουρκία</a></li>
+</ul>
+</div>
+</div>
+
+<div class="column">
+<div class="section">
+<h3>Ελληνική κοινότητα του GNOME</h3>
+<p>Δείτε το <a href="http://gnome.gr" target="_blank">gnome.gr</a>, τον δικτυακό τόπο της ελληνικής ομάδας του GNOME.</p>
+
+<p>Αν θέλετε να προστεθεί το ιστολόγιό σας στον Πλανήτη GNOME Ελλάδα/Κύπρος ή αν υπάρχει κάτι πολύ σοβαρό να πείτε για τον Πλανήτη, παρακαλούμε επικοινωνήστε μαζί μας στη <a href="http://lists.gnome.gr/listinfo.cgi/team-gnome.gr" target="_blank">λίστα ταχυδρομείου</a>.</p>
+<p>Επικοινωνήστε μαζί μας για κάθε ερώτηση/πρόταση που έχετε.</p>
+
+</div>
+</div>
+
+<div id="fineprint" class="section">
+<h3><img src="./images/30/gnome-logo.png" alt="GNOME" title="GNOME"></h3>
+<p>Πνευματική ιδιοκτησία © 2004-2012<br> <a href="http://www.gnome.gr" target="_blank">Ελληνική κοινότητα GNOME</a>.<br><br>
+<p>Συντελεστές του Πλανήτη<br> <a href="http://simos.info/blog" target="_blank">Σίμος Ξενιτέλλης</a>,<a href="http://www.charnik.net/blog" target="_blank">Νίκος Χαρωνιτάκης</a><br><a href="http://thanost.wordpress.com/" target="_blank">Θάνος Τρυφωνίδης</a><br><br>
+<a href="http://validator.w3.org/check/referer">Βελτιστοποιήση</a> ως προς <a href="http://www.w3.org/">τα πρότυπα</a>.<br>
+Φιλοξενία από το <a href="http://www.charnik.net/blog/">Νίκο Χαρωνιτάκη</a>.</p>
+<p id="ownership">Τα περιεχόμενα των άρθρων των ιστολογίων ανήκουν στους συγγραφείς τους, και αντικατοπτρίζουν τις απόψεις τους. Οι εικόνες/φωτογραφίες ανήκουν στα έργα/άτομα που απεικονίζουν.</p>
+</div> <!-- /fineprint -->
+
+</div> <!-- /footer -->
+
+</div> <!-- /page -->
+
+	<script type="text/javascript" src="jquery.cookie.min.js"></script>
+
+        <script type="text/javascript">
+                $(document).ready(function(){
+
+	                $(".close").click(function(){
+	                $("#banners").slideToggle("slow");
+	                $(this).toggleClass("open");
+        	        });
+	
+                });
+        </script>
+
+	
+      <script type="text/javascript">
+                $(document).ready(function(){
+
+	                $(".to").click(function(){
+	                $("#head").slideToggle("slow");
+	                $(this).toggleClass("tc");
+        	        });
+	
+                });
+        </script>
+
+
+<script type="text/javascript">
+	function toggleFeeds() {
+		$("#feedlist").slideToggle(function() {
+			$("#feeds h3").toggleClass("open");
+		});
+	}
+	$(document).ready(function() {
+		var hidden = $.cookie("hidden") ? $.cookie("hidden").split(",") : new Array();
+		// hide posts by disabled folks
+		if (hidden.length > 0) for (i in hidden) {
+			$("div." + hidden[i]).hide();
+		}
+		$("#feeds h3 a").click(function(e) {
+			e.preventDefault();
+			if ($("#feedlist ul").length == 0) {
+				$("#feedlist").load('feeds.html', '', function(r,t,x) {
+					$('<input type="checkbox" checked>')
+						.change(function() {
+							var nick = $(this).parent().attr("class");
+							var i = $.inArray(nick, hidden);
+							if ($(this).attr("checked")) {
+								if (hidden[i]) hidden.splice(i, 1);
+								$("div." + nick).show();
+							} else {
+								if (!hidden[i]) hidden[hidden.length] = nick;
+								$("div." + nick).hide();
+							}
+							$.cookie("hidden", hidden.join(","),
+								{expires: 365});
+						})
+						.prependTo("#feedlist ul li");
+					// remove checks from disabled folks
+					for (i in hidden) {
+						$("#feedlist ul li." + hidden[i] + " input")
+							.removeAttr("checked");
+					}
+					toggleFeeds();
+				});
+			} else {
+				toggleFeeds();
+			}
+		});
+	});
+	</script>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+	_paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik-gnomegr.rhcloud.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+</body>
+
+</html>
